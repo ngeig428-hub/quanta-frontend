@@ -14,7 +14,7 @@ export default function Navbar() {
   } = useUser();
 
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [authMode, setAuthMode] = useState(null); // "signin" or "signup"
+  const [authMode, setAuthMode] = useState(null);
   const menuRef = useRef();
   const navigate = useNavigate();
 
@@ -33,9 +33,10 @@ export default function Navbar() {
   return (
     <nav className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-3 items-center h-16">
+        {/* Flex container instead of grid */}
+        <div className="flex items-center justify-between h-16 flex-wrap">
           {/* Left / Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center flex-shrink-0">
             <Link
               to="/"
               className="text-lg md:text-xl font-bold text-indigo-600 dark:text-indigo-400"
@@ -45,8 +46,8 @@ export default function Navbar() {
           </div>
 
           {/* Center links */}
-          <div className="flex justify-center">
-            <div className="flex gap-6 items-center text-sm md:text-base font-medium text-gray-700 dark:text-gray-300">
+          <div className="flex justify-center flex-grow basis-full md:basis-auto mt-2 md:mt-0">
+            <div className="flex flex-wrap gap-4 md:gap-6 items-center text-sm md:text-base font-medium text-gray-700 dark:text-gray-300">
               <Link to="/learn" className="hover:text-indigo-600 transition">
                 Learn
               </Link>
@@ -66,7 +67,7 @@ export default function Navbar() {
           </div>
 
           {/* Right side */}
-          <div className="flex items-center justify-end gap-4 relative">
+          <div className="flex items-center justify-end gap-4 relative flex-shrink-0">
             {/* Theme toggle */}
             <button
               onClick={toggleDarkMode}

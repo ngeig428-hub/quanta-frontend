@@ -16,7 +16,7 @@ export default function Learn() {
         {/* HEADER */}
         <div className="text-left space-y-2">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Welcome back, Maya 👋
+            Welcome back👋
           </h2>
           <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
             Ready to learn something amazing today?
